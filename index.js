@@ -7,6 +7,7 @@ const pool = require('./database');
 const userRoutes = require('./routes/users');
 const productsRouter = require('./routes/products');
 const cartRoutes = require('./routes/cart');
+const checkoutRoutes = require('./routes/checkout');
 
 const app = express();
 
@@ -17,7 +18,7 @@ app.use(express.json());
 app.use('/api/users', userRoutes);
 app.use('/api/products', productsRouter);
 app.use('/api/cart', cartRoutes);
-
+app.use('/api/checkout', checkoutRoutes);
 
 // Routes
 app.get('/', (req, res) => {
